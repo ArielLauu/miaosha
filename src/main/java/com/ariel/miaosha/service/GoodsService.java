@@ -1,8 +1,7 @@
 package com.ariel.miaosha.service;
 
 import com.ariel.miaosha.dao.GoodsDao;
-import com.ariel.miaosha.domain.Goods;
-import com.ariel.miaosha.domain.MiaoshaGoods;
+import com.ariel.miaosha.entity.MiaoshaGoods;
 import com.ariel.miaosha.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

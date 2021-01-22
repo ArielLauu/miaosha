@@ -1,6 +1,6 @@
 package com.ariel.miaosha.vo;
 
-import com.ariel.miaosha.domain.Goods;
+import com.ariel.miaosha.entity.Goods;
 
 import java.util.Date;
 

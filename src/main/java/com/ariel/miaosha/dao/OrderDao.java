@@ -1,12 +1,9 @@
 package com.ariel.miaosha.dao;
 
-import com.ariel.miaosha.domain.MiaoshaOrder;
-import com.ariel.miaosha.domain.OrderInfo;
-import com.ariel.miaosha.vo.GoodsVo;
+import com.ariel.miaosha.entity.MiaoshaOrder;
+import com.ariel.miaosha.entity.OrderInfo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Mapper
 @Component

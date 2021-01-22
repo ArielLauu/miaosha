@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ariel.miaosha.domain.User;
+import com.ariel.miaosha.entity.User;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.redis.UserKey;
 import com.ariel.miaosha.result.CodeMsg;

@@ -1,10 +1,8 @@
 package com.ariel.miaosha.rabbitmq;
 
-import com.ariel.miaosha.domain.MiaoshaOrder;
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaOrder;
+import com.ariel.miaosha.entity.MiaoshaUser;
 import com.ariel.miaosha.redis.RedisService;
-import com.ariel.miaosha.result.CodeMsg;
-import com.ariel.miaosha.result.Result;
 import com.ariel.miaosha.service.GoodsService;
 import com.ariel.miaosha.service.MiaoshaService;
 import com.ariel.miaosha.service.OrderService;

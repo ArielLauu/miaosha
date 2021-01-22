@@ -1,8 +1,6 @@
 package com.ariel.miaosha.dao;
 
-import com.ariel.miaosha.domain.Goods;
-import com.ariel.miaosha.domain.MiaoshaGoods;
-import com.ariel.miaosha.domain.User;
+import com.ariel.miaosha.entity.MiaoshaGoods;
 import com.ariel.miaosha.vo.GoodsVo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;

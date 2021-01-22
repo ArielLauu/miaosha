@@ -1,9 +1,5 @@
 package com.ariel.miaosha.config;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.ariel.miaosha.access.UserContext;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +10,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaUser;
 import com.ariel.miaosha.service.MiaoshaUserService;
 
 @Service

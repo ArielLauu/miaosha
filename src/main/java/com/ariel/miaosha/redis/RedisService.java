@@ -44,7 +44,7 @@ public class RedisService {
 			 if(str == null || str.length() <= 0) {
 				 return false;
 			 }
-			//生成真正的key
+			 //生成真正的key
 			 String realKey  = prefix.getPrefix() + key;
 			 int seconds =  prefix.expireSeconds();
 			 if(seconds <= 0) {

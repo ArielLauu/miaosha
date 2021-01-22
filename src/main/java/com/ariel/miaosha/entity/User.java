@@ -1,4 +1,4 @@
-package com.ariel.miaosha.domain;
+package com.ariel.miaosha.entity;
 
 public class User {
 	private int id;

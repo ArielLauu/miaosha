@@ -1,7 +1,7 @@
 package com.ariel.miaosha.access;
 
 import com.alibaba.fastjson.JSON;
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaUser;
 import com.ariel.miaosha.redis.AccessKey;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.result.CodeMsg;
@@ -9,7 +9,6 @@ import com.ariel.miaosha.result.Result;
 import com.ariel.miaosha.service.MiaoshaUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.HandlerMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -75,8 +74,8 @@ public class AccessInterceptor  extends HandlerInterceptorAdapter{
     }
 
     private MiaoshaUser getUser(HttpServletRequest request, HttpServletResponse response) {
-        String paramToken = request.getParameter(MiaoshaUserService.COOKI_NAME_TOKEN);
-        String cookieToken = getCookieValue(request, MiaoshaUserService.COOKI_NAME_TOKEN);
+        String paramToken = request.getParameter(MiaoshaUserService.COOKIE_NAME_TOKEN);
+        String cookieToken = getCookieValue(request, MiaoshaUserService.COOKIE_NAME_TOKEN);
         if(StringUtils.isEmpty(cookieToken) && StringUtils.isEmpty(paramToken)) {
             return null;
         }

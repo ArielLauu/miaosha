@@ -6,6 +6,7 @@ import com.ariel.miaosha.service.GoodsService;
 import com.ariel.miaosha.vo.GoodsDetailVo;
 import com.ariel.miaosha.vo.GoodsVo;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -13,12 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaUser;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.service.MiaoshaUserService;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.thymeleaf.spring4.context.SpringWebContext;
-import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.context.WebContext;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,18 +56,21 @@ public class GoodsController {
     	//查询商品
         List<GoodsVo> goodsList=goodsService.listGoodsVo();
         model.addAttribute("goodsList",goodsList);
-		//手动渲染并缓存
-		SpringWebContext context=new SpringWebContext(request,response,request.getServletContext(),request.getLocale(),model.asMap(),applicationContext);
-		html=thymeleafViewResolver.getTemplateEngine().process("goods_list",context);
-		if(!StringUtils.isEmpty(html)){
-			redisService.set(GoodsKey.getGoodsList,"",html);
+
+		WebContext ctx = new WebContext(request, response,
+				request.getServletContext(),
+				request.getLocale(), model.asMap());
+		//手动渲染
+		html = thymeleafViewResolver.getTemplateEngine().process("goods_list", ctx);
+		if (!Strings.isEmpty(html)) {
+			redisService.set(GoodsKey.getGoodsList, "", html);
 		}
-        return html;
+		return html;
     }
 
-	@RequestMapping(value="/to_detail2/{goodsId}",produces = "text/html")
+	@RequestMapping(value="/detail2/{goodsId}",produces = "text/html")
 	@ResponseBody
-	public String detail2(HttpServletRequest request, HttpServletResponse response,Model model,MiaoshaUser user,
+	public String detail(HttpServletRequest request, HttpServletResponse response,Model model,MiaoshaUser user,
 		@PathVariable("goodsId")long goodsId) {
 		model.addAttribute("user", user);
 		//取缓存
@@ -100,7 +104,7 @@ public class GoodsController {
 		model.addAttribute("miaoshaStatus",miaoshaStatus);
 		model.addAttribute("remainSeconds",remainSeconds);
 //		return "goods_detail";
-		SpringWebContext context=new SpringWebContext(request,response,request.getServletContext(),request.getLocale(),model.asMap(),applicationContext);
+		WebContext context=new WebContext(request,response,request.getServletContext(),request.getLocale(),model.asMap());
 		html=thymeleafViewResolver.getTemplateEngine().process("goods_detail",context);
 		if(!StringUtils.isEmpty(html)){
 			redisService.set(GoodsKey.getGoodsDetail,""+goodsId,html);
@@ -111,7 +115,7 @@ public class GoodsController {
 	//详情页，页面静态化
 	@RequestMapping(value="/detail/{goodsId}")
 	@ResponseBody
-	public Result<GoodsDetailVo> detail(HttpServletRequest request, HttpServletResponse response, Model model, MiaoshaUser user,
+	public Result<GoodsDetailVo> detail2(HttpServletRequest request, HttpServletResponse response, Model model, MiaoshaUser user,
 										@PathVariable("goodsId")long goodsId) {
 		GoodsVo goods=goodsService.getGoodsVoByGoodsId(goodsId);
 

@@ -1,4 +1,4 @@
-package com.ariel.miaosha.domain;
+package com.ariel.miaosha.entity;
 
 import java.util.Date;
 

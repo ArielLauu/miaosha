@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ariel.miaosha.dao.UserDao;
-import com.ariel.miaosha.domain.User;
+import com.ariel.miaosha.entity.User;
 
 @Service
 public class UserService {

@@ -1,10 +1,9 @@
 package com.ariel.miaosha.service;
 
-import com.ariel.miaosha.dao.GoodsDao;
 import com.ariel.miaosha.dao.OrderDao;
-import com.ariel.miaosha.domain.MiaoshaOrder;
-import com.ariel.miaosha.domain.MiaoshaUser;
-import com.ariel.miaosha.domain.OrderInfo;
+import com.ariel.miaosha.entity.MiaoshaOrder;
+import com.ariel.miaosha.entity.MiaoshaUser;
+import com.ariel.miaosha.entity.OrderInfo;
 import com.ariel.miaosha.redis.OrderKey;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.vo.GoodsVo;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class OrderService {

@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.List;
 import java.util.Random;
 
 import javax.script.ScriptEngine;
@@ -13,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ariel.miaosha.domain.MiaoshaOrder;
-import com.ariel.miaosha.domain.MiaoshaUser;
-import com.ariel.miaosha.domain.OrderInfo;
+import com.ariel.miaosha.entity.MiaoshaOrder;
+import com.ariel.miaosha.entity.MiaoshaUser;
+import com.ariel.miaosha.entity.OrderInfo;
 import com.ariel.miaosha.redis.MiaoshaKey;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.util.MD5Util;

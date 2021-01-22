@@ -11,7 +11,7 @@ public class DBUtil {
 	
 	static {
 		try {
-			InputStream in = DBUtil.class.getClassLoader().getResourceAsStream("application.yml");
+			InputStream in = DBUtil.class.getClassLoader().getResourceAsStream("application.properties");
 			props = new Properties();
 			props.load(in);
 			in.close();

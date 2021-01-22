@@ -1,14 +1,11 @@
 package com.ariel.miaosha.controller;
 
 import com.ariel.miaosha.access.AccessLimit;
-import com.ariel.miaosha.domain.MiaoshaOrder;
-import com.ariel.miaosha.domain.MiaoshaUser;
-import com.ariel.miaosha.domain.OrderInfo;
+import com.ariel.miaosha.entity.MiaoshaOrder;
+import com.ariel.miaosha.entity.MiaoshaUser;
 import com.ariel.miaosha.rabbitmq.MQSender;
 import com.ariel.miaosha.rabbitmq.MiaoshaMessage;
-import com.ariel.miaosha.redis.AccessKey;
 import com.ariel.miaosha.redis.GoodsKey;
-import com.ariel.miaosha.redis.MiaoshaKey;
 import com.ariel.miaosha.redis.RedisService;
 import com.ariel.miaosha.result.CodeMsg;
 import com.ariel.miaosha.result.Result;
@@ -16,15 +13,12 @@ import com.ariel.miaosha.service.GoodsService;
 import com.ariel.miaosha.service.MiaoshaUserService;
 import com.ariel.miaosha.service.OrderService;
 import com.ariel.miaosha.service.MiaoshaService;
-import com.ariel.miaosha.util.MD5Util;
-import com.ariel.miaosha.util.UUIDUtil;
 import com.ariel.miaosha.vo.GoodsVo;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import sun.security.provider.MD5;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package com.ariel.miaosha.vo;
 
 
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaUser;
 
 public class GoodsDetailVo{
     private int miaoshaStatus=0;

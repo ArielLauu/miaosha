@@ -1,6 +1,6 @@
 package com.ariel.miaosha.rabbitmq;
 
-import com.ariel.miaosha.domain.MiaoshaUser;
+import com.ariel.miaosha.entity.MiaoshaUser;
 
 public class MiaoshaMessage {
     private MiaoshaUser user;

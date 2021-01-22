@@ -31,6 +31,6 @@ hs_err_pid*
 
 #user define
 /target/
-src/main/resources/application.yml
+src/main/resources/application.properties
 .gradle
 docker-compose.yml

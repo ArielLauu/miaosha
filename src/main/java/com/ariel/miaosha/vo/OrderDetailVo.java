@@ -1,8 +1,7 @@
 package com.ariel.miaosha.vo;
 
 
-import com.ariel.miaosha.domain.MiaoshaUser;
-import com.ariel.miaosha.domain.OrderInfo;
+import com.ariel.miaosha.entity.OrderInfo;
 
 public class OrderDetailVo {
   private GoodsVo goods;
